@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.aggregatedStatistics.SeasonStats.RunAndChairStatActivity">
+
+        <!-- Season Name TextView -->
+        <TextView
+            android:id="@+id/seasonNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Season Name"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:background="#0047AB"
+            android:textColor="#FFFFFF"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Season Totals TextView -->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Season Totals"
+            android:layout_marginStart="20dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seasonNameTextView" />
+
+        <!-- FrameLayout for Row 1 -->
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Days"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/days_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vertical m"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/vertical_m_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/row1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Runs"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/runs_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distance KM"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/distance_km_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView22" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/row2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resort"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/resort_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView31" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/active_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView31" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Season Bests"
+            android:layout_marginStart="20dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row3" />
+
+        <!-- FrameLayout for Row 1 -->
+        <LinearLayout
+            android:id="@+id/row11"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max KM/H"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/max_speed_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView111" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView112"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tallest Run m"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/tallestRun_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView112" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row12"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/row11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView121"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max Altitude m"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/max_alt_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView121" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/textView122"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Longest run KM"
+                    android:layout_marginTop="-10dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/longestRun_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="12345"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"
+                    app:layout_constraintTop_toBottomOf="@+id/textView122" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Season Favorites"
+            android:layout_marginStart="20dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/row12" />
+
+        <!-- Season Favorites -->
+        <LinearLayout
+            android:id="@+id/row13"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/textView6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/max_speed_tv_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="McTavish Street"
+                    android:textSize="15dp"
+                    android:layout_marginStart="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/max_speed_tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="37 Days"
+                    android:textSize="15dp"
+                    android:layout_gravity="right"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row14"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/row13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/max_speed_tv_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="West Islands"
+                    android:textSize="15dp"
+                    android:layout_marginStart="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/max_speed_tv_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="173 Rides"
+                    android:textSize="15dp"
+                    android:layout_gravity="right"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row15"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/row14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/max_speed_tv_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mont Royal"
+                    android:textSize="15dp"
+                    android:layout_marginStart="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/max_speed_tv_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="132 Rides"
+                    android:textSize="15dp"
+                    android:layout_gravity="right"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

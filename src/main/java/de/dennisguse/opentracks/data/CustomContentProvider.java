@@ -65,7 +65,7 @@ public class CustomContentProvider extends ContentProvider {
      * It computes the average for heart rate, cadence and power (duration-based average) and the maximum for heart rate, cadence and power.
      * Finally, it ignores manual pause (SEGMENT_START_MANUAL).
      */
-    private static final String SENSOR_STATS_QUERY =
+ private final static String SENSOR_STATS_QUERY =
             "WITH time_select as " +
                 "(SELECT t1." + TrackPointsColumns.TIME + " * (t1." + TrackPointsColumns.TYPE + " NOT IN (" + TrackPoint.Type.SEGMENT_START_MANUAL.type_db + ")) time_value " +
                 "FROM " + TrackPointsColumns.TABLE_NAME + " t1 " +

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/settings_profile_title">
+    <EditTextPreference
+        android:inputType="text"
+        android:key="@string/settings_profile_nickname_key"
+        android:title="@string/settings_profile_nickname"
+        app:useSimpleSummaryProvider="true" />
+
+    <ListPreference
+        android:key="@string/settings_profile_country_key"
+        android:title="@string/settings_profile_country"
+        android:entries="@array/countries_array"
+        android:defaultValue="@string/default_country_value"
+        android:entryValues="@array/countries_array_values" />/>
+</PreferenceScreen>

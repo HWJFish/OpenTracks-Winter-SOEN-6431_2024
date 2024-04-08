@@ -48,6 +48,14 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
             trackIds.stream().forEach(selection::addTrackId);
         }
 
+//        viewBinding.showCalendarButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), CalendarActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         adapter = new AggregatedStatisticsAdapter(this, null);
         viewBinding.aggregatedStatsList.setLayoutManager(layoutManager);
@@ -63,7 +71,6 @@ public class AggregatedStatisticsActivity extends AbstractActivity implements Fi
             }
             checkListEmpty();
         });
-
         setSupportActionBar(viewBinding.bottomAppBarLayout.bottomAppBar);
     }
 

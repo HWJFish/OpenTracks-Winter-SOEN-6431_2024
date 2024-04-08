@@ -884,7 +884,7 @@ public class ChartView extends View {
                 break;
             }
         }
-        if (firstChartSeries != null && chartPoints.isEmpty()) {
+        if (firstChartSeries != null && !chartPoints.isEmpty()) {
             int dx = getX(maxX) - pointer.getIntrinsicWidth() / 2;
             double value = firstChartSeries.extractDataFromChartPoint(last);
             int dy = getY(firstChartSeries, value) - pointer.getIntrinsicHeight();

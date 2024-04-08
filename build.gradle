@@ -56,6 +56,7 @@ android {
     buildFeatures {
         viewBinding true
         buildConfig true
+        dataBinding true
     }
 
     androidResources {
@@ -111,6 +112,10 @@ android {
         }
     }
 
+    viewBinding{
+        enabled = true
+    }
+
     applicationVariants.configureEach { variant ->
         variant.resValue "string", "applicationId", variant.applicationId
 
@@ -125,6 +130,9 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.activity:activity:1.8.0'
+    implementation 'androidx.navigation:navigation-fragment:2.7.7'
+    implementation 'androidx.navigation:navigation-ui:2.7.7'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
 
     implementation 'androidx.appcompat:appcompat:1.6.1'

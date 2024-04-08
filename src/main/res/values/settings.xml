@@ -67,6 +67,10 @@
     <string name="default_activity_key" translatable="false">defaultActivity</string>
     <string name="default_activity_default" translatable="false">@string/activity_type_unknown</string>
 
+    <string name="ski_season_start_key" translatable="false">skiSeasonStartDate</string>
+    <item name="monthPicker" type="id" />
+    <item name="dayPicker" type="id" />
+
     <string name="recording_distance_interval_key" translatable="false">recordingDistanceInterval</string>
     <string name="recording_distance_interval_default" translatable="false">10</string>
     <string-array name="recording_distance_interval_values">

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/season_stat_navigaton"
+    app:startDestination="@id/runsStatFragment">
+
+    <fragment
+        android:id="@+id/runsStatFragment"
+        android:name="de.dennisguse.opentracks.RunsStatFragment"
+        android:label="fragment_runs_stat"
+        tools:layout="@layout/fragment_runs_stat" />
+    <fragment
+        android:id="@+id/chairsStatFragment"
+        android:name="de.dennisguse.opentracks.ChairsStatFragment"
+        android:label="fragment_chairs_stat"
+        tools:layout="@layout/fragment_chairs_stat" />
+</navigation>

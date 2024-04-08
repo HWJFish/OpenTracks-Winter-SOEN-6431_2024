@@ -33,6 +33,13 @@
             android:key="@string/track_name_key"
             android:title="@string/settings_recording_track_name_title"
             app:useSimpleSummaryProvider="true" />
+        <Preference
+            android:key="@string/ski_season_start_key"
+            android:defaultValue="@string/default_Date_Key"
+            android:inputType="date"
+            android:title="@string/ski_season_start_title"
+            android:summary="@string/default_Date_Key"
+            app:useSimpleSummaryProvider="true"
+            />
     </PreferenceCategory>
-
 </PreferenceScreen>

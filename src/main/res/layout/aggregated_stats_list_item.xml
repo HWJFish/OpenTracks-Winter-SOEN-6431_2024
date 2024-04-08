@@ -133,6 +133,44 @@
         app:layout_constraintTop_toBottomOf="@+id/aggregated_stats_avg_rate"
         tools:text="@string/stats_average_moving_speed" />
 
+    <!-- Slope % -->
+    <TextView
+        android:id="@+id/aggregated_stats_slope_percent"
+        style="@style/TextAppearance.OpenTracks.SecondaryValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/aggregated_stats_slope_percent_unit"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@id/aggregated_stats_avg_rate_label"
+        tools:text="10"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/aggregated_stats_slope_percent_unit"
+        style="@style/TextAppearance.OpenTracks.PrimaryUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/aggregated_stats_slope_percent"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/aggregated_stats_slope_percent"
+        tools:text="%"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/aggregated_stats_slope_percent_label"
+        style="@style/TextAppearance.OpenTracks.SecondaryHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintTop_toBottomOf="@+id/aggregated_stats_slope_percent"
+        tools:text="Average Slope %"
+        android:visibility="gone"/>
+
     <!-- Max. rate -->
     <TextView
         android:id="@+id/aggregated_stats_max_rate"
@@ -172,6 +210,66 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@id/guideline1"
         app:layout_constraintEnd_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@id/aggregated_stats_max_rate_label" />
+        app:layout_constraintTop_toBottomOf="@id/aggregated_stats_slope_percent_label" />
+
+    <Button
+        android:id="@+id/list_of_seasons_btn234"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Seasons"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aggregated_stats_horizontal_line" />
+
+    <Button
+        android:id="@+id/runs_and_lifts_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="Runs and lifts"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aggregated_stats_horizontal_line" />
+
+    <Button
+        android:id="@+id/elevation_and_speed_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="Elevation and speed"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aggregated_stats_horizontal_line" />
+
+    <View
+        android:id="@+id/elevation_and_speed_horizontal_line"
+        style="@style/HorizontalLine"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintEnd_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/elevation_and_speed_button" />
+
+    <Button
+        android:id="@+id/calendar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/day_specific_calendar"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/elevation_and_speed_button" />
+
+    <View
+        android:id="@+id/calendar_btn_horizontal_line"
+        style="@style/HorizontalLine"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/guideline1"
+        app:layout_constraintEnd_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/calendar_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

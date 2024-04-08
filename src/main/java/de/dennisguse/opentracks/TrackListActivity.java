@@ -42,6 +42,8 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 import de.dennisguse.opentracks.data.ContentProviderUtils;
