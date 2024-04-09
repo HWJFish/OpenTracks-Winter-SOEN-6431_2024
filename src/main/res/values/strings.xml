@@ -616,12 +616,7 @@ limitations under the License.
     <string name="day_specific_calendar">Calendar</string>
     <string name="day_specific_title">Day Specific Run/Lift</string>
     <string name="segment_name_run">Run</string>
-    <!-- Day-Specific Activities -->
 
-    <!-- Day-Specific Stats -->
-    <string name="day_specific_calendar">Calendar</string>
-    <string name="day_specific_title">Day Specific Run/Lift</string>
-    <string name="segment_name_run">Run</string>
     <!-- Day-Specific Activities -->
 
     <string name="value_integer_feet_excellent_gps">%1$d ft (excellent GPS)</string>
