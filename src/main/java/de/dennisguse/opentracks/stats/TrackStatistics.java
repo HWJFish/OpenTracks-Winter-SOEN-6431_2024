@@ -70,6 +70,7 @@ public class TrackStatistics {
      private Float slopePercent_m;
      private Float maximumSpeedPerRun;
      private double averageSpeedPerRun;
+	 private Float AverageslopePerRun;
 
 
 
@@ -446,6 +447,18 @@ public class TrackStatistics {
      public void setMaximumSpeedPerRun(float maximumSpeedPerRun) {
          Log.d("setSpeed",""+maximumSpeedPerRun);
          this.maximumSpeedPerRun = maximumSpeedPerRun;
+     }
+	 
+	 public float getAverageslopePerRun() {
+        
+        if (AverageslopePerRun!=null)
+            return AverageslopePerRun;
+        return 0;
+     }
+
+     public void setAverageslopePerRun(float AverageslopePerRun) {
+         Log.d("setSlope",""+AverageslopePerRun);
+         this.AverageslopePerRun = AverageslopePerRun;
      }
 
      public double getAverageSpeedPerRun() {

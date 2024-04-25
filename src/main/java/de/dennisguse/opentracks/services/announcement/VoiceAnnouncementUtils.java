@@ -163,6 +163,7 @@ class VoiceAnnouncementUtils {
 
     private static void resetRunData(TrackStatistics trackStatistics){
         trackStatistics.setMaximumSpeedPerRun(0);
+		trackStatistics.setAverageslopePerRun(0);
     }
 
     static Spannable createRunStatistics(Context context, TrackStatistics trackStatistics, UnitSystem unitSystem) {
@@ -171,6 +172,7 @@ class VoiceAnnouncementUtils {
         Distance totalDistance = trackStatistics.getTotalDistance();
         Speed averageMovingSpeed = trackStatistics.getAverageMovingSpeed();
         Float maxSpeed = trackStatistics.getMaximumSpeedPerRun();
+		Float Averageslope = trackStatistics.getAverageslopePerRun();
         resetRunData(trackStatistics);
         int speedId;
         String unitSpeedTTS;
@@ -209,7 +211,7 @@ class VoiceAnnouncementUtils {
             appendDecimalUnit(builder, MessageFormat.format(template, Map.of("n", speedInUnit)), speedInUnit, 1, unitSpeedTTS);
             builder.append(".");
         }
-        if (shouldVoiceAnnounceAverageslopeRun()) {
+        if (shouldVoiceAnnounceAverageslopeRun() && Averageslope!=null) {
             double avgSlope = CalculateAverageSlope();
             if (!Double.isNaN(avgSlope)) {
                 builder.append(" ")

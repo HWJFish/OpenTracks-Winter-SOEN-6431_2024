@@ -119,12 +119,6 @@ public class TrackStatisticsUpdater {
             currentSegment.addTotalAltitudeLoss(trackPoint.getAltitudeLoss());
         }
 
-        if (trackPoint.getSpeed()!=null){
-            double currentSpeed=trackPoint.getSpeed().toMPS();
-            if (currentSpeed > trackStatistics.getMaximumSpeedPerRun()){
-                trackStatistics.setMaximumSpeedPerRun(((float) currentSpeed));
-            }
-        }
         // this function will always be called for all trackpoints to check if it is waiting for chairlift
         // and also modify values for the check according to current trackpoint.
         if (isWaitingForChairlift(trackPoint)){
