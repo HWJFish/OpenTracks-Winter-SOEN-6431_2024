@@ -150,6 +150,11 @@ public class VoiceAnnouncementManager implements SharedPreferences.OnSharedPrefe
             return;
         }
 
+        // return directly if not really moved
+        if (trackStatistics.getTotalDistance().toM()<=0.1){
+            return;
+        }
+
 
         boolean announce = false;
         this.trackStatistics = track.getTrackStatistics();

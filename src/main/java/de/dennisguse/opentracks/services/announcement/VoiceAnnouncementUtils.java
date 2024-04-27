@@ -117,29 +117,6 @@ class VoiceAnnouncementUtils {
             default -> throw new RuntimeException("Not implemented");
         }
 
-
-        if (shouldVoiceAnnounceMaxSpeedRecording()) {
-            double speedInUnit = maxSpeed.to(unitSystem);
-            builder.append(" ")
-                    .append(context.getString(R.string.stats_max_speed));
-            String template = context.getResources().getString(speedId);
-            appendDecimalUnit(builder, MessageFormat.format(template, Map.of("n", speedInUnit)), speedInUnit, 1, unitSpeedTTS);
-            builder.append(".");
-        }
-
-        if (shouldVoiceAnnounceMaxSlope()) {
-            double maxSlope = calculateMaxSlope(); // Calculate the maximum slope based on elevation data
-            Log.i("MaxSlope",maxSlope+"");
-            if (!Double.isNaN(maxSlope)) {
-                builder.append(" ")
-                        .append(context.getString(R.string.settings_announcements_max_slope))
-                        .append(": ")
-                        .append(String.format("%.2f%%", maxSlope)) // Format the slope value
-                        .append(".");
-            }
-        }
-        
-
         if (shouldVoiceAnnounceAverageSpeedRecording()) {
 
             double speedInUnit = avgSpeed.to(unitSystem);
@@ -150,26 +127,13 @@ class VoiceAnnouncementUtils {
             builder.append(".");
         }
 
-
-        if (shouldVoiceAnnounceTimeSkiedRecording()) {
-            double timeSkied = skiingTime.toSeconds(); // Calculate the maximum slope based on elevation data
-            if (!Double.isNaN(timeSkied)) {
-                builder.append(" ")
-                        .append(context.getString(R.string.settings_announcements_time_skied_recording))
-                        .append(": ")
-                        .append(String.format("%.2f%%", timeSkied)) // Format the slope value
-                        .append(".");
-            }
-        }
-        if(shouldVoiceAnnounceTemperature()){
-             
-            if (!Double.isNaN(temperature)) {
-                builder.append(" ")
-                        .append(context.getString(R.string.settings_announcements_temperature))
-                        .append(": ")
-                        .append(String.format("%.2f", temperature)) // Format the slope value
-                        .append(" degree.");
-            }
+        if (shouldVoiceAnnounceMaxSpeedRecording()) {
+            double speedInUnit = maxSpeed.to(unitSystem);
+            builder.append(" ")
+                    .append(context.getString(R.string.stats_max_speed));
+            String template = context.getResources().getString(speedId);
+            appendDecimalUnit(builder, MessageFormat.format(template, Map.of("n", speedInUnit)), speedInUnit, 1, unitSpeedTTS);
+            builder.append(".");
         }
 
         if (shouldVoiceAnnounceAveragesloperecording()) {
@@ -183,20 +147,16 @@ class VoiceAnnouncementUtils {
             }
         }
 
-        if (shouldVoiceAnnounceTotalWaitingTime()){
-            long waitingTimeLong=waitingTime.toSeconds();
-            long waitingMinutes=waitingTimeLong/60;
-            long waitingSeconds=waitingTimeLong%60;
-            builder.append(" ")
-                    .append(context.getString(R.string.settings_announcements_total_waiting_time))
-                    .append(": ");
-            if (waitingMinutes>0){
-                builder.append(waitingMinutes+" minutes ");
+        if (shouldVoiceAnnounceMaxSlope()) {
+            double maxSlope = calculateMaxSlope(); // Calculate the maximum slope based on elevation data
+            Log.i("MaxSlope",maxSlope+"");
+            if (!Double.isNaN(maxSlope)) {
+                builder.append(" ")
+                        .append(context.getString(R.string.settings_announcements_max_slope))
+                        .append(": ")
+                        .append(String.format("%.2f%%", maxSlope)) // Format the slope value
+                        .append(".");
             }
-            if (waitingSeconds>0){
-                builder.append(waitingSeconds+" seconds ");
-            }
-            builder.append(".");
         }
 
         if (shouldVoiceAnnounceTimeSkiedRecording()) {
@@ -215,6 +175,36 @@ class VoiceAnnouncementUtils {
             }
             builder.append(".");
         }
+
+
+
+        if (shouldVoiceAnnounceTotalWaitingTime()){
+            long waitingTimeLong=waitingTime.toSeconds();
+            long waitingMinutes=waitingTimeLong/60;
+            long waitingSeconds=waitingTimeLong%60;
+            builder.append(" ")
+                    .append(context.getString(R.string.settings_announcements_total_waiting_time))
+                    .append(": ");
+            if (waitingMinutes>0){
+                builder.append(waitingMinutes+" minutes ");
+            }
+            if (waitingSeconds>0){
+                builder.append(waitingSeconds+" seconds ");
+            }
+            builder.append(".");
+        }
+
+        if(shouldVoiceAnnounceTemperature()){
+             
+            if (!Double.isNaN(temperature)) {
+                builder.append(" ")
+                        .append(context.getString(R.string.settings_announcements_temperature))
+                        .append(": ")
+                        .append(String.format("%.2f", temperature)) // Format the slope value
+                        .append(" degree.");
+            }
+        }
+
 
         return builder;
     }
